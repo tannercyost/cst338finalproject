@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class CreateAccount extends AppCompatActivity {
     public static final String TAG = "AccountLog";
     EditText editAccountName;
@@ -39,24 +42,45 @@ public class CreateAccount extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if(isEmpty(editAccountName) || isEmpty(editPassword)) {
                     Log.i(TAG, "Error - fields must be set");
                     toastMaker("All fields must be set");
                 } else {
-                    accountItem = createAccountItem();
-                    Log.i(TAG, "AccountItem: " + accountItem.toString());
-                    accountLog.addLog(accountItem);
+                    if (checkField(editAccountName.getText().toString())
+                            && checkField(editPassword.getText().toString())) {
+                        String name = editAccountName.getText().toString();
+                        String passwd = editPassword.getText().toString();
+
+                        if(accountLog.getLogString().contains(name)) {
+                            Log.i(TAG, "Account " + name + " already exists.");
+                        } else {
+                            accountItem = createAccountItem(name, passwd);
+                            Log.i(TAG, "AccountItem: " + accountItem.toString());
+                            accountLog.addLog(accountItem);
+                            toastMaker("Account " + accountItem.getName() + " created successfully");
+                        }
+                    } else {
+                        toastMaker("Account and password must contain at least 1 number and 3 characters.");
+                    }
+
                 }
                 tempTextView.setText(accountLog.getLogString());
             }
         });
     }
 
-    private AccountItem createAccountItem() {
-        String name = editAccountName.getText().toString();
-        String passwd = editPassword.getText().toString();
+    private boolean checkField(String field) {
+        String patternString = "(\\D{3,})(\\d{1,})";
+        Pattern p = Pattern.compile(patternString);
+        Matcher m = p.matcher(field);
 
+        if(m.find()) {
+            return true;
+        }
+        return false;
+    }
+
+    private AccountItem createAccountItem(String name, String passwd) {
         AccountItem acc = new AccountItem();
 
         acc.setName(name);

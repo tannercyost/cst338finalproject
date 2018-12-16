@@ -107,7 +107,6 @@ public class AccountHelper extends SQLiteOpenHelper {
 
     public List<AccountItem> getLogs(){
         List<AccountItem> logs = new ArrayList<>();
-
         DatabaseCursorWrapper cursor = new DatabaseCursorWrapper(this.queryDB(AccountTable.NAME,null,null));
         try {
             if(cursor.getCount() == 0){
