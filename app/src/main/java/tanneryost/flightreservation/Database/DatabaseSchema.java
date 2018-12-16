@@ -22,7 +22,6 @@ public class DatabaseSchema {
             public static final String NAME     = "name";
             public static final String PASSWD   = "password";
             public static final String DATE     = "date";
-
         }
     }
 

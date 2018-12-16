@@ -46,7 +46,7 @@ public class DatabaseCursorWrapper extends CursorWrapper {
         String name = getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.NAME));
         String passwd = getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.PASSWD));
         int sqlLogId = getInt(getColumnIndex("_id"));
-        Date date = new Date(getLong(getColumnIndex(DatabaseSchema.AccountTable.Cols.DATE)));
+        Date date = new Date(getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.DATE)));
         AccountItem acc = new AccountItem(UUID.fromString(uuidString));
 
         acc.setPasswd(passwd);

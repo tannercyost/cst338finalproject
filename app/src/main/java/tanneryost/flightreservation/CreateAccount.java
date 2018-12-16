@@ -36,22 +36,10 @@ public class CreateAccount extends AppCompatActivity {
         accountLog = AccountLog.get(this.getApplicationContext());
         tempTextView.setText(accountLog.getLogString());
 
-
-
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //Log.i(TAG, "add button clicked");
-
-//                accountItem = new AccountItem();
-//                accountItem.setName("testAccount");
-//                accountItem.setPasswd("testPassword");
-//                Log.i(TAG, accountItem.toString());
-//                if (accountItem == null) {
-//                    Log.i(TAG, "Yep its null");
-//                }
-//                toastMaker(editAccountName.getText().toString() + editPassword.getText().toString());
                 if(isEmpty(editAccountName) || isEmpty(editPassword)) {
                     Log.i(TAG, "Error - fields must be set");
                     toastMaker("All fields must be set");
@@ -60,6 +48,7 @@ public class CreateAccount extends AppCompatActivity {
                     Log.i(TAG, "AccountItem: " + accountItem.toString());
                     accountLog.addLog(accountItem);
                 }
+                tempTextView.setText(accountLog.getLogString());
             }
         });
     }

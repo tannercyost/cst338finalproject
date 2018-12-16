@@ -30,7 +30,7 @@ public class AccountHelper extends SQLiteOpenHelper {
     private static final String TAG = "AccountLog";
 
     private static final int VERSION            = 1;
-    public static final String DATABASE_NAME    = "gymlog.db";
+    public static final String DATABASE_NAME    = "accountLog.db";
 
     private SQLiteDatabase db;
 
@@ -66,10 +66,8 @@ public class AccountHelper extends SQLiteOpenHelper {
     }
 
     public long addAccountItem(AccountItem account) {
-
         if(this.getAccountItem(account.getIDnum()) == null) {
             return insertAccount(account);
-
         } else {
             return updateAccountItem(account);
         }
@@ -149,7 +147,7 @@ public class AccountHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(AccountTable.Cols.UUID, log.getIDnum().toString());
         cv.put(AccountTable.Cols.NAME, log.getName().toString());
-        cv.put(AccountTable.Cols.DATE, log.getDateString());
+        cv.put(AccountTable.Cols.DATE, log.getDate().toString());
         cv.put(AccountTable.Cols.PASSWD, log.getPasswd().toString());
         return cv;
     }

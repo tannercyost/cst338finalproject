@@ -37,11 +37,11 @@ public class AccountLog {
     public String getLogString() {
         StringBuilder sb = new StringBuilder();
         List<AccountItem> logs = mAccountHelper.getLogs();
-        if (logs == null){
+        if (logs == null) {
             return "Account Logs null\n";
         }
 
-        sb.append("Account Logs\n");
+        sb.append("Account Logs:\n");
 
         for(AccountItem log : logs){
             sb.append(log.toString());

@@ -11,7 +11,7 @@ public class AccountItem {
     private String passwd;
     private int sqlLogId;
 
-    private SimpleDateFormat ft = new SimpleDateFormat("dd-M-yyyy @ HH:mm:ss");
+    private SimpleDateFormat ft = new SimpleDateFormat("M-dd-yyyy @ HH:mm:ss");
     private Date date;
 
     public AccountItem() {
@@ -20,8 +20,8 @@ public class AccountItem {
     }
 
     public AccountItem(UUID iD) {
-        this();
         IDnum = iD;
+        date = new Date();
     }
 
     public SimpleDateFormat getFt() {
