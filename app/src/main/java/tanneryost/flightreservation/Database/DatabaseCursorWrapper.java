@@ -12,8 +12,8 @@ import java.util.UUID;
  * This supplies the mechanism to get a log item from a cursor.
  */
 
-public class GymLogCursorWrapper extends CursorWrapper {
-    public GymLogCursorWrapper(Cursor cursor){
+public class DatabaseCursorWrapper extends CursorWrapper {
+    public DatabaseCursorWrapper(Cursor cursor){
         super(cursor);
     }
 

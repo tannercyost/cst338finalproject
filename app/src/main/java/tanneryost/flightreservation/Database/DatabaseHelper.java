@@ -24,7 +24,7 @@ import java.util.UUID;
  * This returns LogItems, Lists of LogItems and primitives (longs etc)
  */
 
-public class GymLogHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "GYM_Log";
 
@@ -33,7 +33,7 @@ public class GymLogHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
 
-    public GymLogHelper(Context context){
+    public DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, VERSION);
     }
 
@@ -76,7 +76,7 @@ public class GymLogHelper extends SQLiteOpenHelper {
 
     private int updateLogItem(LogItem log){
         db = this.getWritableDatabase();
-        ContentValues cv = GymLogHelper.getContentValues(log);
+        ContentValues cv = DatabaseHelper.getContentValues(log);
         String whereClause = GymLogTable.Cols.UUID + " = ? ";
         String[] whereArgs = {log.getLogID().toString()};
         try{
@@ -92,7 +92,7 @@ public class GymLogHelper extends SQLiteOpenHelper {
         String whereClause = GymLogTable.Cols.UUID + " = ? ";
         String[] whereArgs = {logUUID.toString()};
 
-        GymLogCursorWrapper cursor = new GymLogCursorWrapper(this.queryDB(GymLogTable.NAME,whereClause,whereArgs));
+        DatabaseCursorWrapper cursor = new DatabaseCursorWrapper(this.queryDB(GymLogTable.NAME,whereClause,whereArgs));
 
         try {
             if (cursor.getCount() == 0){
@@ -109,7 +109,7 @@ public class GymLogHelper extends SQLiteOpenHelper {
     public List<LogItem> getLogs(){
         List<LogItem> logs = new ArrayList<>();
 
-        GymLogCursorWrapper cursor = new GymLogCursorWrapper(this.queryDB(GymLogTable.NAME,null,null));
+        DatabaseCursorWrapper cursor = new DatabaseCursorWrapper(this.queryDB(GymLogTable.NAME,null,null));
         try{
             if(cursor.getCount() == 0){
                 Log.d(TAG, "getLogItems returned nothing...");
