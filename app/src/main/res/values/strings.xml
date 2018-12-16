@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Flight Reservation</string>
+    <string name="createAccount">Create Account</string>
+    <string name="reserveSeat">Reserve Seat</string>
+    <string name="cancelReservation">Cancel Reservation</string>
+    <string name="manageSystem">Manage System</string>
+    <string name="welcome">Welcome to the CSUMB Flight Reservation System</string>
+    <string name="createAccountMsg">Enter a username and password. Username and password must have at least one number and three characters.</string>
+    <string name="createAccountPlaceholderName">Account Name</string>
+    <string name="createAccountPlaceholderPassword">Password</string>
+    <string name="createAccountSubmit">Create Account</string>
+    <string name="title_activity_reserve_seat">ReserveSeat</string>
+</resources>
