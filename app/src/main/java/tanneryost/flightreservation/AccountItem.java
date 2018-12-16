@@ -19,6 +19,13 @@ public class AccountItem {
         date = new Date();
     }
 
+    public AccountItem(String name, String passwd) {
+        IDnum = UUID.randomUUID();
+        date = new Date();
+        this.name = name;
+        this.passwd = passwd;
+    }
+
     public AccountItem(UUID iD) {
         IDnum = iD;
         date = new Date();

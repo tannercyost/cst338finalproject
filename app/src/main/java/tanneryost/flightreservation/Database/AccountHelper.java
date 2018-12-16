@@ -39,19 +39,28 @@ public class AccountHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db){
+    public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + AccountTable.NAME + "(" +
                 " _id integer primary key autoincrement, " +
-                AccountTable.Cols.NAME + ","+
-                AccountTable.Cols.PASSWD + ","+
-                AccountTable.Cols.DATE + ","+
+                AccountTable.Cols.NAME + "," +
+                AccountTable.Cols.PASSWD + "," +
+                AccountTable.Cols.DATE + "," +
                 AccountTable.Cols.UUID +
                 ")"
         );
+        AccountItem acc1 = new AccountItem("alice5", "csumb100");
+        AccountItem acc2 = new AccountItem("brian77", "123ABC");
+        AccountItem acc3 = new AccountItem("chris21", "CHRIS21");
+        ContentValues cv1 = getContentValues(acc1);
+        ContentValues cv2 = getContentValues(acc2);
+        ContentValues cv3 = getContentValues(acc3);
+        db.insert(AccountTable.NAME, null, cv1);
+        db.insert(AccountTable.NAME, null, cv2);
+        db.insert(AccountTable.NAME, null, cv3);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //NYI
     }
 
@@ -105,11 +114,11 @@ public class AccountHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<AccountItem> getLogs(){
+    public List<AccountItem> getLogs() {
         List<AccountItem> logs = new ArrayList<>();
         DatabaseCursorWrapper cursor = new DatabaseCursorWrapper(this.queryDB(AccountTable.NAME,null,null));
         try {
-            if(cursor.getCount() == 0){
+            if(cursor.getCount() == 0) {
                 Log.d(TAG, "getAccountItems returned nothing...");
                 return null;
             }

@@ -1,5 +1,6 @@
 package tanneryost.flightreservation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -19,7 +20,7 @@ public class CreateAccount extends AppCompatActivity {
     EditText editAccountName;
     EditText editPassword;
     Button submitButton;
-    TextView tempTextView;
+//    TextView tempTextView;
 
     //database items
     AccountItem accountItem;
@@ -30,14 +31,14 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        tempTextView = (TextView) findViewById(R.id.tempTextView);
-        tempTextView.setMovementMethod(new ScrollingMovementMethod());
+//        tempTextView = (TextView) findViewById(R.id.tempTextView);
+//        tempTextView.setMovementMethod(new ScrollingMovementMethod());
 
         editAccountName  = (EditText) findViewById(R.id.editAccountName);
         editPassword  = (EditText) findViewById(R.id.editPassword);
         submitButton = (Button) findViewById(R.id.submitButton);
         accountLog = AccountLog.get(this.getApplicationContext());
-        tempTextView.setText(accountLog.getLogString());
+//        tempTextView.setText(accountLog.getLogString());
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,33 +52,40 @@ public class CreateAccount extends AppCompatActivity {
                         String name = editAccountName.getText().toString();
                         String passwd = editPassword.getText().toString();
 
-                        if(accountLog.getLogString().contains(name)) {
+                        if(accountLog.getLogString().contains(name) || name.equals("admin2")) {
                             Log.i(TAG, "Account " + name + " already exists.");
+                            toastMaker("Account " + name + " already exists.");
                         } else {
                             accountItem = createAccountItem(name, passwd);
                             Log.i(TAG, "AccountItem: " + accountItem.toString());
                             accountLog.addLog(accountItem);
                             toastMaker("Account " + accountItem.getName() + " created successfully");
+                            finish();
                         }
                     } else {
                         toastMaker("Account and password must contain at least 1 number and 3 characters.");
                     }
 
                 }
-                tempTextView.setText(accountLog.getLogString());
+//                tempTextView.setText(accountLog.getLogString());
             }
         });
     }
 
     private boolean checkField(String field) {
-        String patternString = "(\\D{3,})(\\d{1,})";
-        Pattern p = Pattern.compile(patternString);
-        Matcher m = p.matcher(field);
-
-        if(m.find()) {
-            return true;
+        char[] word = field.toCharArray();
+        int character = 0;
+        int digit = 0;
+        for (char item : word) {
+            if (Character.isLetter(item))
+                character++;
+            else if (Character.isDigit(item))
+                digit++;
         }
-        return false;
+        if (character >= 3 && digit >= 1)
+            return true;
+        else
+            return false;
     }
 
     private AccountItem createAccountItem(String name, String passwd) {
