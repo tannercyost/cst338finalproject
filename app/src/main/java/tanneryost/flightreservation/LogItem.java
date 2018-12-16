@@ -53,7 +53,6 @@ public class LogItem {
         return ft;
     }
 
-
     public Date getDate() {
         return date;
     }
