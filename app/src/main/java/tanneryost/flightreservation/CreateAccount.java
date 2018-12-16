@@ -1,6 +1,5 @@
 package tanneryost.flightreservation;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -12,8 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CreateAccount extends AppCompatActivity {
     public static final String TAG = "AccountLog";
@@ -84,8 +81,7 @@ public class CreateAccount extends AppCompatActivity {
         }
         if (character >= 3 && digit >= 1)
             return true;
-        else
-            return false;
+        return false;
     }
 
     private AccountItem createAccountItem(String name, String passwd) {

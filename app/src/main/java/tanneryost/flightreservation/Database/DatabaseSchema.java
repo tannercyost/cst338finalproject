@@ -17,7 +17,12 @@ public class DatabaseSchema {
 
         public static final class Cols {
             public static final String UUID     = "uuid";
-            public static final String NAME     = "name";
+            public static final String NUMBER     = "number";
+            public static final String DEPARTURE = "departure";
+            public static final String ARRIVAL = "arrival";
+            public static final String TIME = "time";
+            public static final String CAPACITY = "capacity";
+            public static final String PRICE = "price";
         }
     }
 }

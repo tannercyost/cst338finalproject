@@ -1,3 +1,10 @@
+/**
+ * MainActivity.java
+ * Abstract: Main page for Android App.
+ *
+ * Tanner Yost
+ * 12/16/2018
+ */
 package tanneryost.flightreservation;
 
 import android.content.Intent;
@@ -6,7 +13,6 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,25 +20,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createAccount(View view) {
-        // Do something in response to button
         Intent intent = new Intent(this, CreateAccount.class);
         startActivity(intent);
     }
 
     public void reserveSeat(View view) {
-        // Do something in response to button
         Intent intent = new Intent(this, ReserveSeat.class);
         startActivity(intent);
     }
 
     public void cancelReservation(View view) {
-        // Do something in response to button
         Intent intent = new Intent(this, CancelReservation.class);
         startActivity(intent);
     }
 
     public void manageSystem(View view) {
-        // Do something in response to button
         Intent intent = new Intent(this, ManageSystem.class);
         startActivity(intent);
     }

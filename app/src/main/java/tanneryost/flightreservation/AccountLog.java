@@ -1,7 +1,6 @@
 package tanneryost.flightreservation;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.List;
 
@@ -43,7 +42,7 @@ public class AccountLog {
 
         sb.append("Account Logs:\n");
 
-        for(AccountItem log : logs){
+        for(AccountItem log : logs) {
             sb.append(log.toString());
         }
 

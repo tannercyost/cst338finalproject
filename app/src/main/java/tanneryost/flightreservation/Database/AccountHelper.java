@@ -65,13 +65,11 @@ public class AccountHelper extends SQLiteOpenHelper {
     }
 
     private long insertAccount(AccountItem account) {
-
         ContentValues cv = getContentValues(account);
 
         db = this.getWritableDatabase();
 
         return db.insert(AccountTable.NAME, null, cv);
-
     }
 
     public long addAccountItem(AccountItem account) {
