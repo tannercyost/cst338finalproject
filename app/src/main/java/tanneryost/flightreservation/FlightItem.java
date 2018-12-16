@@ -16,6 +16,9 @@ public class FlightItem {
     private SimpleDateFormat ft = new SimpleDateFormat("M-dd-yyyy @ HH:mm:ss");
     private Date dateAdded;
 
+    private int sqlLogId;
+
+
     public FlightItem() {
         this.IDnum = UUID.randomUUID();
         this.dateAdded = new Date();
@@ -117,5 +120,13 @@ public class FlightItem {
 
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    public int getSqlLogId() {
+        return sqlLogId;
+    }
+
+    public void setSqlLogId(int sqlLogId) {
+        this.sqlLogId = sqlLogId;
     }
 }
