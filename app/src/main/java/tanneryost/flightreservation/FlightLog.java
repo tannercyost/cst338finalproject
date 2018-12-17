@@ -33,6 +33,9 @@ public class FlightLog {
         return mFlightHelper.addFlightItem(Flight);
     }
 
+    public List<FlightItem> getFlightList() {
+        return mFlightHelper.getLogs();
+    }
     public String getLogString() {
         StringBuilder sb = new StringBuilder();
         List<FlightItem> logs = mFlightHelper.getLogs();

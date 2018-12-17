@@ -33,6 +33,10 @@ public class AccountLog {
         return mAccountHelper.addAccountItem(account);
     }
 
+    public List<AccountItem> getAccountList() {
+        return mAccountHelper.getLogs();
+    }
+
     public String getLogString() {
         StringBuilder sb = new StringBuilder();
         List<AccountItem> logs = mAccountHelper.getLogs();

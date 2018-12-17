@@ -13,6 +13,6 @@
     <string name="title_activity_reserve_seat">ReserveSeat</string>
     <string name="newFlightInfoButton">Add New Flight Information</string>
     <string name="transactionData">Transaction Data</string>
-    <string name="flightData">Flight data:</string>
-    <string name="accountData">Account data: </string>
+    <string name="flightData">Flight Data</string>
+    <string name="accountData">Account Data</string>
 </resources>
