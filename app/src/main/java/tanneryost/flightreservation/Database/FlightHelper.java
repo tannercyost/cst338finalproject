@@ -51,15 +51,23 @@ public class FlightHelper extends SQLiteOpenHelper {
                 FlightTable.Cols.UUID       +
                 ")"
         );
-        FlightItem acc1 = new FlightItem("Otter101", "Monterey", "Los Angeles", "10:00(AM)", 10, 150.00);
-//        FlightItem acc2 = new FlightItem("brian77", "123ABC");
-//        FlightItem acc3 = new FlightItem("chris21", "CHRIS21");
-        ContentValues cv1 = getContentValues(acc1);
-//        ContentValues cv2 = getContentValues(acc2);
-//        ContentValues cv3 = getContentValues(acc3);
+        FlightItem flight1 = new FlightItem("Otter101", "Monterey", "Los Angeles", "10:00(AM)", 10, 150.00);
+        FlightItem flight2 = new FlightItem("Otter102", "Los Angeles", "Monterey", "01:00(PM)", 10, 150.00);
+        FlightItem flight3 = new FlightItem("Otter201", "Monterey", "Seattle", "11:00(AM)", 5, 200.50);
+        FlightItem flight4 = new FlightItem("Otter205", "Monterey", "Seattle", "03:00(PM)", 15, 150.00);
+        FlightItem flight5 = new FlightItem("Otter202", "Seattle", "Monterey", "02:00(PM)", 5, 200.50);
+
+        ContentValues cv1 = getContentValues(flight1);
+        ContentValues cv2 = getContentValues(flight2);
+        ContentValues cv3 = getContentValues(flight3);
+        ContentValues cv4 = getContentValues(flight4);
+        ContentValues cv5 = getContentValues(flight5);
+
         db.insert(FlightTable.NAME, null, cv1);
-//        db.insert(FlightTable.NAME, null, cv2);
-//        db.insert(FlightTable.NAME, null, cv3);
+        db.insert(FlightTable.NAME, null, cv2);
+        db.insert(FlightTable.NAME, null, cv3);
+        db.insert(FlightTable.NAME, null, cv4);
+        db.insert(FlightTable.NAME, null, cv5);
     }
 
     @Override

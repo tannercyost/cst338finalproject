@@ -1,6 +1,5 @@
 package tanneryost.flightreservation.Database;
 
-import android.accounts.Account;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -51,9 +50,11 @@ public class AccountHelper extends SQLiteOpenHelper {
         AccountItem acc1 = new AccountItem("alice5", "csumb100");
         AccountItem acc2 = new AccountItem("brian77", "123ABC");
         AccountItem acc3 = new AccountItem("chris21", "CHRIS21");
+
         ContentValues cv1 = getContentValues(acc1);
         ContentValues cv2 = getContentValues(acc2);
         ContentValues cv3 = getContentValues(acc3);
+
         db.insert(AccountTable.NAME, null, cv1);
         db.insert(AccountTable.NAME, null, cv2);
         db.insert(AccountTable.NAME, null, cv3);
