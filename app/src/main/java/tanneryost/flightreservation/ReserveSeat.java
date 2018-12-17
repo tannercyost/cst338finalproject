@@ -6,7 +6,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 public class ReserveSeat extends AppCompatActivity {
-        TextView tempTextView;
+    TextView tempTextView;
     FlightItem flightItem;
     FlightLog flightLog;
 

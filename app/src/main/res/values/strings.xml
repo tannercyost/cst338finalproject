@@ -8,6 +8,7 @@
     <string name="createAccountMsg">Enter a username and password. Username and password must have at least one number and three characters.</string>
     <string name="createAccountPlaceholderName">Account Name</string>
     <string name="createAccountPlaceholderPassword">Password</string>
+    <string name="login">Login</string>
     <string name="createAccountSubmit">Create Account</string>
     <string name="title_activity_reserve_seat">ReserveSeat</string>
 </resources>
