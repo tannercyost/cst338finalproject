@@ -43,7 +43,7 @@ public class ManageSystemLoggedIn extends AppCompatActivity {
             accountData.append(item.getDateString());
             accountData.append("\n");
         }
-
+        accountData.append("\n\n\n");
         for (FlightItem item : flights) {
             flightData.append("\n");
             flightData.append("Flight number:\n");
@@ -61,8 +61,8 @@ public class ManageSystemLoggedIn extends AppCompatActivity {
             flightData.append("\nDate created:\n");
             flightData.append(item.getDateString());
             flightData.append("\n");
-
         }
+        flightData.append("\n\n\n");
     }
 
     public void addFlightInfo(View view) {

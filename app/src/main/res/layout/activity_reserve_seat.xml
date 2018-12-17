@@ -6,16 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".ReserveSeat">
 
-    <TextView
-        android:id="@+id/tempTextView"
-        android:layout_width="361dp"
-        android:layout_height="628dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="338dp"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="337dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -6,20 +6,18 @@ import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 public class ReserveSeat extends AppCompatActivity {
-    TextView tempTextView;
+    TextView info;
+
+    //database items
     FlightItem flightItem;
     FlightLog flightLog;
+    AccountItem accountItem;
+    AccountLog accountLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve_seat);
-
-        tempTextView = (TextView) findViewById(R.id.tempTextView);
-        tempTextView.setMovementMethod(new ScrollingMovementMethod());
-        flightLog = FlightLog.get(this.getApplicationContext());
-
-        tempTextView.setText(flightLog.getLogString());
 
     }
 }

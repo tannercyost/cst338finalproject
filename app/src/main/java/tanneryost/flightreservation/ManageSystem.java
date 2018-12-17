@@ -21,7 +21,6 @@ public class ManageSystem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_system);
-        login();
 
         editAccountName  = (EditText) findViewById(R.id.editAccountName);
         editPassword  = (EditText) findViewById(R.id.editPassword);
@@ -40,7 +39,7 @@ public class ManageSystem extends AppCompatActivity {
                         String passwd = editPassword.getText().toString();
                         if (name.equals("admin2") && passwd.equals("admin2")) {
                             toastMaker("Success");
-                            //login(view);
+                            login(view);
                         }
                     } else {
                         toastMaker("Incorrect account name and/or password.");
@@ -51,7 +50,7 @@ public class ManageSystem extends AppCompatActivity {
         });
     }
 
-    public void login () {
+    public void login (View view) {
         Intent intent = new Intent(this, ManageSystemLoggedIn.class);
         startActivity(intent);
     }
