@@ -1,5 +1,6 @@
 package tanneryost.flightreservation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,8 +38,9 @@ public class ManageSystem extends AppCompatActivity {
                             && checkField(editPassword.getText().toString())) {
                         String name = editAccountName.getText().toString();
                         String passwd = editPassword.getText().toString();
-                        if (name.equals("admin2") && passwd.equals("admin2")){
+                        if (name.equals("admin2") && passwd.equals("admin2")) {
                             toastMaker("Success");
+                            login(view);
                         }
                     } else {
                         toastMaker("Incorrect account name and/or password.");
@@ -47,6 +49,11 @@ public class ManageSystem extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void login (View view) {
+        Intent intent = new Intent(this, ManageSystemLoggedIn.class);
+        startActivity(intent);
     }
 
     private boolean checkField(String field) {

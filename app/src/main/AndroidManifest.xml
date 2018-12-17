@@ -20,7 +20,8 @@
         <activity android:name=".CancelReservation" />
         <activity android:name=".ManageSystem" />
         <activity android:name=".ReserveSeat" />
-        <activity android:name=".ManageSystemLoggedIn"></activity>
+        <activity android:name=".ManageSystemLoggedIn" />
+        <activity android:name=".ManageSystemNewFlightInfo"></activity>
     </application>
 
 </manifest>
