@@ -2,6 +2,7 @@ package tanneryost.flightreservation.Database;
 
 import android.database.Cursor;
 import android.database.CursorWrapper;
+import android.util.Log;
 
 import tanneryost.flightreservation.AccountItem;
 import tanneryost.flightreservation.FlightItem;
@@ -44,12 +45,13 @@ public class DatabaseCursorWrapper extends CursorWrapper {
     }
 
     public AccountItem getAccountItem() {
-
         String uuidString = getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.UUID));
         String name = getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.NAME));
         String passwd = getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.PASSWD));
         int sqlLogId = getInt(getColumnIndex("_id"));
+
         Date date = new Date(getString(getColumnIndex(DatabaseSchema.AccountTable.Cols.DATE)));
+
         AccountItem acc = new AccountItem(UUID.fromString(uuidString));
 
         acc.setPasswd(passwd);

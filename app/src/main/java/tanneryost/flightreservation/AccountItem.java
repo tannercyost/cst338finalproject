@@ -1,5 +1,7 @@
 package tanneryost.flightreservation;
 
+import android.util.Log;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -24,6 +26,7 @@ public class AccountItem {
         this.date = new Date();
         this.name = name;
         this.passwd = passwd;
+        Log.i("FlightLog", date.toString());
     }
 
     public AccountItem(UUID iD) {

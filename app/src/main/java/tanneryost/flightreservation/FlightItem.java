@@ -1,5 +1,7 @@
 package tanneryost.flightreservation;
 
+import android.util.Log;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -55,8 +57,12 @@ public class FlightItem {
         return sb.toString();
     }
 
-    public String getDateString() {
-        return ft.format(dateAdded);
+//    public String getDateString() {
+//        return ft.format(dateAdded);
+//    }
+
+    public Date getDateAdded() {
+        return dateAdded;
     }
 
     public String getNumber() {
@@ -111,17 +117,13 @@ public class FlightItem {
         this.price = price;
     }
 
-    public SimpleDateFormat getFt() {
-        return ft;
-    }
-
-    public void setFt(SimpleDateFormat ft) {
-        this.ft = ft;
-    }
-
-    public Date getDateAdded() {
-        return dateAdded;
-    }
+//    public SimpleDateFormat getFt() {
+//        return ft;
+//    }
+//
+//    public void setFt(SimpleDateFormat ft) {
+//        this.ft = ft;
+//    }
 
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;

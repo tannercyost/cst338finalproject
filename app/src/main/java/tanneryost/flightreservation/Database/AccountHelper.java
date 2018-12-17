@@ -27,7 +27,7 @@ import java.util.UUID;
 
 public class AccountHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "AccountLog";
+    private static final String TAG = "FlightLog";
 
     private static final int VERSION            = 1;
     public static final String DATABASE_NAME    = "accountLog.db";
@@ -94,7 +94,6 @@ public class AccountHelper extends SQLiteOpenHelper {
     }
 
     private AccountItem getAccountItem(UUID logUUID) {
-
         String whereClause = AccountTable.Cols.UUID + " = ? ";
         String[] whereArgs = {logUUID.toString()};
 
@@ -143,7 +142,7 @@ public class AccountHelper extends SQLiteOpenHelper {
                     null,
                     null,
                     null);
-        }catch (Exception e){
+        }catch (Exception e) {
             Log.d(TAG, "Problem in queryDB!!");
             return null;
         }
@@ -157,5 +156,4 @@ public class AccountHelper extends SQLiteOpenHelper {
         cv.put(AccountTable.Cols.PASSWD, log.getPasswd().toString());
         return cv;
     }
-
 }

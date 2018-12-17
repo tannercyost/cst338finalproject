@@ -97,7 +97,6 @@ public class FlightHelper extends SQLiteOpenHelper {
     }
 
     private FlightItem getFlightItem(UUID logUUID) {
-
         String whereClause = FlightTable.Cols.UUID + " = ? ";
         String[] whereArgs = {logUUID.toString()};
 
@@ -125,7 +124,6 @@ public class FlightHelper extends SQLiteOpenHelper {
             }
             cursor.moveToFirst();
             while(!cursor.isAfterLast()) {
-                Log.i("FlightLog", cursor.getFlightItem().toString());
                 logs.add(cursor.getFlightItem());
                 cursor.moveToNext();
             }

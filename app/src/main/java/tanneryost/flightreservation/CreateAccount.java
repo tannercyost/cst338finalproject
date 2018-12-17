@@ -17,7 +17,7 @@ public class CreateAccount extends AppCompatActivity {
     EditText editAccountName;
     EditText editPassword;
     Button submitButton;
-//    TextView tempTextView;
+    TextView tempTextView;
 
     //database items
     AccountItem accountItem;
@@ -28,14 +28,14 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-//        tempTextView = (TextView) findViewById(R.id.tempTextView);
-//        tempTextView.setMovementMethod(new ScrollingMovementMethod());
+        tempTextView = (TextView) findViewById(R.id.tempTextView);
+        tempTextView.setMovementMethod(new ScrollingMovementMethod());
 
         editAccountName  = (EditText) findViewById(R.id.editAccountName);
         editPassword  = (EditText) findViewById(R.id.editPassword);
         submitButton = (Button) findViewById(R.id.submitButton);
         accountLog = AccountLog.get(this.getApplicationContext());
-//        tempTextView.setText(accountLog.getLogString());
+        tempTextView.setText(accountLog.getLogString());
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +64,7 @@ public class CreateAccount extends AppCompatActivity {
                     }
 
                 }
-//                tempTextView.setText(accountLog.getLogString());
+                tempTextView.setText(accountLog.getLogString());
             }
         });
     }
@@ -93,13 +93,13 @@ public class CreateAccount extends AppCompatActivity {
         return acc;
     }
 
-    private void toastMaker(String message){
+    private void toastMaker(String message) {
         Toast t = Toast.makeText(this.getApplicationContext(),message,Toast.LENGTH_LONG );
         t.setGravity(Gravity.CENTER_VERTICAL,0,0);
         t.show();
     }
 
-    private boolean isEmpty(EditText textToCheck){
+    private boolean isEmpty(EditText textToCheck) {
         return textToCheck.getText().toString().trim().length() == 0;
     }
 }
