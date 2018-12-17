@@ -17,12 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateAccount" />
-        <activity
-            android:name=".ReserveSeat"
-            android:label="@string/title_activity_reserve_seat"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CancelReservation" />
-        <activity android:name=".ManageSystem"></activity>
+        <activity android:name=".ManageSystem" />
+        <activity android:name=".ReserveSeat"></activity>
     </application>
 
 </manifest>

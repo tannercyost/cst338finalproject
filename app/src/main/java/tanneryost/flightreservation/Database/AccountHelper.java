@@ -149,7 +149,7 @@ public class AccountHelper extends SQLiteOpenHelper {
         }
     }
 
-    public static ContentValues getContentValues(AccountItem log){
+    public static ContentValues getContentValues(AccountItem log) {
         ContentValues cv = new ContentValues();
         cv.put(AccountTable.Cols.UUID, log.getIDnum().toString());
         cv.put(AccountTable.Cols.NAME, log.getName().toString());

@@ -19,13 +19,14 @@ public class DatabaseCursorWrapper extends CursorWrapper {
     }
 
     public FlightItem getFlightItem() {
-        String uuidString = getString(getColumnIndex(DatabaseSchema.FlightsTable.Cols.UUID));
-        String number = getString(getColumnIndex(DatabaseSchema.FlightsTable.Cols.NUMBER));
-        String departure = getString(getColumnIndex(DatabaseSchema.FlightsTable.Cols.DEPARTURE));
-        String arrival = getString(getColumnIndex(DatabaseSchema.FlightsTable.Cols.ARRIVAL));
-        String time = getString(getColumnIndex(DatabaseSchema.FlightsTable.Cols.TIME));
-        int capacity = getInt(getColumnIndex(DatabaseSchema.FlightsTable.Cols.CAPACITY));
-        double price = getDouble(getColumnIndex(DatabaseSchema.FlightsTable.Cols.PRICE));
+        String uuidString = getString(getColumnIndex(DatabaseSchema.FlightTable.Cols.UUID));
+        String number = getString(getColumnIndex(DatabaseSchema.FlightTable.Cols.NUMBER));
+        String departure = getString(getColumnIndex(DatabaseSchema.FlightTable.Cols.DEPARTURE));
+        String arrival = getString(getColumnIndex(DatabaseSchema.FlightTable.Cols.ARRIVAL));
+        String time = getString(getColumnIndex(DatabaseSchema.FlightTable.Cols.TIME));
+        int capacity = getInt(getColumnIndex(DatabaseSchema.FlightTable.Cols.CAPACITY));
+        double price = getDouble(getColumnIndex(DatabaseSchema.FlightTable.Cols.PRICE));
+        Date date = new Date(getString(getColumnIndex(DatabaseSchema.FlightTable.Cols.DATEADDED)));
         int sqlLogId = getInt(getColumnIndex("_id"));
 
         FlightItem flight = new FlightItem(UUID.fromString(uuidString));
@@ -37,6 +38,7 @@ public class DatabaseCursorWrapper extends CursorWrapper {
         flight.setCapacity(capacity);
         flight.setPrice(price);
         flight.setSqlLogId(sqlLogId);
+        flight.setDateAdded(date);
 
         return flight;
     }

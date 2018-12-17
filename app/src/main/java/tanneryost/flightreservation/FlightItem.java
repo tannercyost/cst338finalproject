@@ -37,6 +37,7 @@ public class FlightItem {
         this.time = time;
         this.capacity = capacity;
         this.price = price;
+        this.dateAdded = new Date();
     }
 
     @Override
@@ -68,6 +69,10 @@ public class FlightItem {
 
     public String getDeparture() {
         return departure;
+    }
+
+    public UUID getIDnum() {
+        return IDnum;
     }
 
     public void setDeparture(String departure) {
