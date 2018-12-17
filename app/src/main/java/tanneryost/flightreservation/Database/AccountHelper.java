@@ -1,3 +1,10 @@
+/**
+ * Tanner Yost
+ * AccountHelper.java
+ * Abstract: Adapted from GymLog, database helper for account items.
+ * Date: 12/16/2018
+ */
+
 package tanneryost.flightreservation.Database;
 
 import android.content.ContentValues;
@@ -13,16 +20,6 @@ import tanneryost.flightreservation.AccountItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-/**
- * This class is where the database is created and accessed. We design this to be encapsulated.
- * We NEVER access this directly.
- *
- * We use the get static method to get an object ensuring that only one ever exists.
- * This, it turns out, is a singleton design pattern.
- *
- * This returns AccountItems, Lists of AccountItems and primitives (longs etc)
- */
 
 public class AccountHelper extends SQLiteOpenHelper {
 

@@ -1,14 +1,19 @@
+/**
+ * Tanner Yost
+ * CreateAccount.java
+ * Date: 12/16/2018
+ */
 package tanneryost.flightreservation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
+// import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+// import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -17,7 +22,7 @@ public class CreateAccount extends AppCompatActivity {
     EditText editAccountName;
     EditText editPassword;
     Button submitButton;
-    TextView tempTextView;
+//    TextView tempTextView;
 
     //database items
     AccountItem accountItem;
@@ -28,14 +33,14 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        tempTextView = (TextView) findViewById(R.id.tempTextView);
-        tempTextView.setMovementMethod(new ScrollingMovementMethod());
+//        tempTextView = (TextView) findViewById(R.id.tempTextView);
+//        tempTextView.setMovementMethod(new ScrollingMovementMethod());
 
         editAccountName  = (EditText) findViewById(R.id.editAccountName);
         editPassword  = (EditText) findViewById(R.id.editPassword);
         submitButton = (Button) findViewById(R.id.submitButton);
         accountLog = AccountLog.get(this.getApplicationContext());
-        tempTextView.setText(accountLog.getLogString());
+//        tempTextView.setText(accountLog.getLogString());
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +69,7 @@ public class CreateAccount extends AppCompatActivity {
                     }
 
                 }
-                tempTextView.setText(accountLog.getLogString());
+//                tempTextView.setText(accountLog.getLogString());
             }
         });
     }

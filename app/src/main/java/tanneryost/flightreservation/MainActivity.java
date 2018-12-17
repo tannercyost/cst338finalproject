@@ -1,10 +1,12 @@
 /**
+ * Tanner Yost
  * MainActivity.java
- * Abstract: Main page for Android App.
+ * Abstract: Main page for Android App. Further "page" java files will not have abstract.
  *
  * Tanner Yost
  * 12/16/2018
  */
+
 package tanneryost.flightreservation;
 
 import android.content.Intent;

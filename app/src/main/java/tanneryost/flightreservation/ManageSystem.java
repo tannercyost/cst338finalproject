@@ -1,3 +1,10 @@
+/**
+ * Tanner Yost
+ * ManageSystem.java
+ *
+ * Date: 12/16/2018
+ */
+
 package tanneryost.flightreservation;
 
 import android.content.Intent;

@@ -1,3 +1,10 @@
+/**
+ * Tanner Yost
+ * CancelReservation.java
+ * Ran out of time to implement :(
+ * Date: 12/16/2018
+ */
+
 package tanneryost.flightreservation;
 
 import android.support.v7.app.AppCompatActivity;

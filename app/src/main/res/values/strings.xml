@@ -15,4 +15,13 @@
     <string name="transactionData">Transaction Data</string>
     <string name="flightData">Flight Data</string>
     <string name="accountData">Account Data</string>
+
+    <string name="depart_prompt">Choose a departure</string>
+    <string name="arriv_prompt">Choose a destination</string>
+
+    <string-array name="locations">
+        <item>Monterey</item>
+        <item>Los Angeles</item>
+        <item>Seattle</item>
+    </string-array>
 </resources>

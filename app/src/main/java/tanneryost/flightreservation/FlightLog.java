@@ -1,3 +1,9 @@
+/**
+ * Tanner Yost
+ * FlightLog.java
+ * Abstract: Adapted from GymLog, keeps a log of all flights.
+ * Date: 12/16/2018
+ */
 package tanneryost.flightreservation;
 
 import android.content.Context;
@@ -5,12 +11,6 @@ import android.content.Context;
 import java.util.List;
 
 import tanneryost.flightreservation.Database.FlightHelper;
-
-/**
- * This is the file that we use to read/write to the DB.
- * This creates an instance of the helper and we send our requests here.
- * Any data massaging happens here.
- */
 
 public class FlightLog {
     private static FlightLog sFlightLog;

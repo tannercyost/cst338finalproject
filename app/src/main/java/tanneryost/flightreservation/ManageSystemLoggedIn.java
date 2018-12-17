@@ -1,3 +1,9 @@
+/**
+ * Tanner Yost
+ * ManageSystemLoggedIn.java
+ * Abstract: Allows the admin2 user to do various things.
+ * Date: 12/16/2018
+ */
 package tanneryost.flightreservation;
 
 import android.content.Intent;

@@ -1,9 +1,18 @@
+/**
+ * Tanner Yost
+ * AccountItem.java
+ * Abstract: Java representation of account used in flight reservation system.
+ * Date: 12/16/2018
+ */
+
 package tanneryost.flightreservation;
 
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class AccountItem {
@@ -12,6 +21,7 @@ public class AccountItem {
     private String name;
     private String passwd;
     private int sqlLogId;
+    private List<FlightItem> flights;
 
     private SimpleDateFormat ft = new SimpleDateFormat("M-dd-yyyy @ HH:mm:ss");
     private Date date;
@@ -19,6 +29,7 @@ public class AccountItem {
     public AccountItem() {
         this.IDnum = UUID.randomUUID();
         this.date = new Date();
+        flights = new ArrayList<>();
     }
 
     public AccountItem(String name, String passwd) {
@@ -27,11 +38,13 @@ public class AccountItem {
         this.name = name;
         this.passwd = passwd;
         Log.i("FlightLog", date.toString());
+        flights = new ArrayList<>();
     }
 
     public AccountItem(UUID iD) {
         IDnum = iD;
         date = new Date();
+        flights = new ArrayList<>();
     }
 
     public SimpleDateFormat getFt() {

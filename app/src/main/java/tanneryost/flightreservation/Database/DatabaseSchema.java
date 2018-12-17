@@ -1,3 +1,10 @@
+/**
+ * Tanner Yost
+ * DatabaseSchema.java
+ * Abstract: Adapted from GymLog, schema for SQLite database. Contains two tables.
+ * Date: 12/16/2018
+ */
+
 package tanneryost.flightreservation.Database;
 
 public class DatabaseSchema {

@@ -1,3 +1,9 @@
+/**
+ * Tanner Yost
+ * FlightItem.java
+ * Abstract: Java object representation of a flight.
+ * Date: 12/16/2018
+ */
 package tanneryost.flightreservation;
 
 import android.util.Log;

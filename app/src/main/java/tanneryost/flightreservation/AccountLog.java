@@ -1,3 +1,10 @@
+/**
+ * Tanner Yost
+ * AccountLog.java
+ * Abstract: Adapted from GymLog, keeps a log of all accounts.
+ * Date: 12/16/2018
+ */
+
 package tanneryost.flightreservation;
 
 import android.content.Context;
@@ -6,11 +13,6 @@ import java.util.List;
 
 import tanneryost.flightreservation.Database.AccountHelper;
 
-/**
- * This is the file that we use to read/write to the DB.
- * This creates an instance of the helper and we send our requests here.
- * Any data massaging happens here.
- */
 
 public class AccountLog {
     private static AccountLog sAccountLog;

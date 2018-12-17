@@ -1,3 +1,9 @@
+/**
+ * Tanner Yost
+ * DatabaseCursorWrapper.java
+ * Abstract: Adapted from GymLog, allows access to database items.
+ * Date: 12/16/2018
+ */
 package tanneryost.flightreservation.Database;
 
 import android.database.Cursor;
@@ -10,9 +16,6 @@ import tanneryost.flightreservation.FlightItem;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * This supplies the mechanism to get a log item from a cursor.
- */
 
 public class DatabaseCursorWrapper extends CursorWrapper {
     public DatabaseCursorWrapper(Cursor cursor){
